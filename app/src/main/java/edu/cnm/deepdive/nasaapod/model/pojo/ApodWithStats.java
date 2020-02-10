@@ -45,5 +45,5 @@ public class ApodWithStats {
     return String.format("%s (%s); last accessed = %s; access count = %d",
         apod.getTitle(), apod.getMediaType(), lastAccess, accessCount);
   }
-  
+
 }
