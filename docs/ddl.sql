@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `Apod`
     `media_type`  TEXT                              NOT NULL,
     `url`         TEXT                              NOT NULL,
     `hd_url`      TEXT
-);
+) );
 
 CREATE UNIQUE INDEX IF NOT EXISTS `index_Apod_date` ON `Apod` (`date`);
 
