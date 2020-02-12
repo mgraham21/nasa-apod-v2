@@ -26,7 +26,7 @@ public class ApodAdapter extends ArrayAdapter<ApodWithStats> {
   @Override
   public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
     View view = convertView;
-    if(view == null) {
+    if (view == null) {
       view = LayoutInflater.from(getContext()).inflate(R.layout.item_apod, parent, false);
     }
     ImageView thumbnail = view.findViewById(R.id.thumbnail);
@@ -36,9 +36,11 @@ public class ApodAdapter extends ArrayAdapter<ApodWithStats> {
     ApodWithStats apod = getItem(position);
     title.setText(apod.getApod().getTitle());
     date.setText(DateFormat.getMediumDateFormat(getContext()).format(apod.getApod().getDate()));
+    String countQuantity = getContext().getResources()
+        .getQuantityString(R.plurals.access_count, apod.getAccessCount());
     access.setText(getContext().getString(R.string.access_format, apod.getAccessCount(),
-        DateFormat.getMediumDateFormat(getContext()).format(apod.getLastAccess())));
-    if(apod.getApod().getMediaType() == MediaType.IMAGE) {
+        DateFormat.getMediumDateFormat(getContext()).format(apod.getLastAccess()), countQuantity));
+    if (apod.getApod().getMediaType() == MediaType.IMAGE) {
       Picasso.get().load(apod.getApod().getUrl()).into(thumbnail);
     } else {
       thumbnail.setImageResource(R.drawable.ic_slow_motion_video);

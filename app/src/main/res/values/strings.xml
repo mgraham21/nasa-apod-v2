@@ -7,8 +7,9 @@
   <string name="error_message">Unable to retrieve APoD. (%s)</string>
   <string name="information">Information</string>
   <string name="info_ok">Ok</string>
-  <string name="access_format">(Last accessed %2$s; accessed %1$d times)</string>
+  <string name="access_format">(Accessed %1$d %3$s, last on %2$s)</string>
 
   <string name="hello_blank_fragment"></string>
   <string name="title_history">History</string>
+  <string name="default_description">Default description</string>
 </resources>
