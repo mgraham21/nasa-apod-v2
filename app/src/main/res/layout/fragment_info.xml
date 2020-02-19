@@ -19,7 +19,8 @@
       android:id="@+id/date_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Date:"
+      android:text="@string/date_label"
+      style="@style/LinkLabel"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintStart_toStartOf="parent"/>
 
@@ -36,6 +37,7 @@
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:textIsSelectable="true"
+      style="@style/BodyText"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toBottomOf="@id/date"/>
@@ -44,7 +46,8 @@
       android:id="@+id/web_url_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Web page:"
+      android:text="@string/web_url_label"
+      style="@style/LinkLabel"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/description"/>
 
@@ -52,7 +55,8 @@
       android:id="@+id/url_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Media URL:"
+      android:text="@string/url_label"
+      style="@style/LinkLabel"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/web_url"/>
 
@@ -60,7 +64,8 @@
       android:id="@+id/hd_url_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="HD URL:"
+      android:text="@string/hd_url_label"
+      style="@style/LinkLabel"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/url"/>
 
@@ -71,6 +76,36 @@
       app:barrierDirection="end"
       app:barrierAllowsGoneWidgets="false"
       app:constraint_referenced_ids="web_url_label,url_label,hd_url_label"/>
+
+    <TextView
+      android:id="@+id/web_url"
+      android:autoLink="web"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:textIsSelectable="true"
+      app:layout_constraintStart_toStartOf="@id/label_barrier"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBaseline_toBaselineOf="@id/web_url_label"/>
+
+    <TextView
+      android:id="@+id/url"
+      android:autoLink="web"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:textIsSelectable="true"
+      app:layout_constraintStart_toStartOf="@id/label_barrier"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBaseline_toBaselineOf="@id/url_label"/>
+
+    <TextView
+      android:id="@+id/hd_url"
+      android:autoLink="web"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:textIsSelectable="true"
+      app:layout_constraintStart_toStartOf="@id/label_barrier"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBaseline_toBaselineOf="@id/hd_url_label"/>
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 
